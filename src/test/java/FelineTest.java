@@ -9,7 +9,9 @@ public class FelineTest {
     @Test
     public void getKittensWithArgumentReturnArgumentTest() {
         Feline feline = new Feline();
-        assertEquals(5, feline.getKittens(5));
+        int expectedKittenCount = 5;
+        int actualKittenCount = feline.getKittens(expectedKittenCount);
+        assertEquals(expectedKittenCount, actualKittenCount);
     }
 
     @Test
