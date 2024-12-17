@@ -3,6 +3,7 @@ import com.example.Lion;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.Mock;
+import org.mockito.Mockito;
 import org.mockito.junit.MockitoJUnitRunner;
 
 import static org.junit.Assert.*;
@@ -30,8 +31,11 @@ public class LionTest {
     }
 
     @Test
-    public void getKittensTest(){
-
+    public void getKittensTest() throws Exception {
+        int kittensCount = 1;
+        Mockito.when(feline.getKittens()).thenReturn(1);
+        Lion lion = new Lion("Самец", feline);
+        assertEquals(kittensCount,lion.getKittens());
     }
 
 }
