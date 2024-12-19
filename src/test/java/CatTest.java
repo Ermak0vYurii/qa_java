@@ -18,15 +18,15 @@ public class CatTest {
 
 
     @Test
-    public void testGetSound(){
+    public void getSoundTest(){
         Cat cat = new Cat(feline);
         String actual = cat.getSound();
         String expected = "Мяу";
-        assertEquals(expected, actual);
+        assertEquals("Кошка должна говорить Мяу",expected, actual);
     }
 
     @Test
-    public void testGetFood() throws Exception {
+    public void getFoodTest() throws Exception {
         Cat cat = new Cat(feline);
         when(feline.eatMeat()).thenReturn(List.of("Животные", "Птицы", "Рыба"));
         assertEquals(List.of("Животные", "Птицы", "Рыба"), cat.getFood());

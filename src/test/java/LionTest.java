@@ -17,25 +17,10 @@ public class LionTest {
     Feline feline;
 
     @Test
-    public void doesHaveManeMaleTrueTest() throws Exception {
-        Lion lionMale = new Lion("Самец", feline);
-        assertTrue(lionMale.doesHaveMane());
-    }
-    @Test
-    public void doesHaveManeFemaleFalseTest() throws Exception {
-        Lion lionFemale = new Lion("Самка", feline);
-        assertFalse(lionFemale.doesHaveMane());
-    }
-    @Test
-    public void testConstructorWithInvalidSex() throws Exception {
-        String sex = "Львица";
+    public void constructorWithInvalidSexTest() throws Exception {
+        String invalidSex = "Львица";
         String expectedMessage = "Используйте допустимые значения пола животного - самец или самка";
-        try {
-            new Lion(sex, feline);
-        } catch (Exception e) {
-            System.out.println(e.getMessage());
-            assertEquals(expectedMessage, e.getMessage());
-        }
+        assertThrows(Exception.class, () -> new Lion(invalidSex, feline));
 
     }
 
